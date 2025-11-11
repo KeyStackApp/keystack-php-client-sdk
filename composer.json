@@ -1,0 +1,24 @@
+{
+  "name": "keystackapp/keystack-php-client-sdk",
+  "description": "PHP SDK for KeyStack API",
+  "license": "MIT",
+  "type": "library",
+  "autoload": {
+    "psr-4": {
+      "KeyStackApp\\": "src/"
+    }
+  },
+  "require": {
+    "phpseclib/phpseclib": "~3.0",
+    "symfony/http-client": "^7.3",
+    "guzzlehttp/promises": "^2.3",
+    "keystackapp/keystack-php-auth": "^0.0.3",
+    "keystackapp/keystack-php-client": "^0.0.5"
+  },
+  "minimum-stability": "stable",
+  "config": {
+    "allow-plugins": {
+      "php-http/discovery": true
+    }
+  }
+}
