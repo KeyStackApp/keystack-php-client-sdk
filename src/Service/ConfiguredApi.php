@@ -48,10 +48,12 @@ class ConfiguredApi
     public function handleApiError(\Closure $callback): mixed
     {
         try {
+            $this->configureApi();
+
             return $callback();
         } catch (\Exception $e) {
             if ($e->getCode() == 401) {
-                $loginManager->login($adapter, $apiKey);
+                $this->loginManager->login($this->adapter, $this->apiKey);
 
                 $this->api->getConfig()->setAccessToken($this->adapter->getToken());
 
